@@ -9,8 +9,8 @@ url = 'https://www.gbif.org/species/'
 Juanma wants a to get the url of the page of each specie. So I just have to use the url above and 
 retrieve the database key with the GBIF's API using the the python app pygbif'''
 
-def read_excel (name, sheet_name='Plantilla'):
-    df = pd.read_excel(name, sheet_name, skiprows=1)
+def read_excel (name, sheet_name='Plantilla', header=1):
+    df = pd.read_excel(name, sheet_name, skiprows=header)
     return df
 
 def retrieve_key (name, url):
@@ -31,11 +31,11 @@ if __name__ == '__main__':
                     generates an excel with species names and their respective links to the GBIF web page.''',
                     epilog='Author: Juan Picon')
     parser.add_argument('excelname', help='An excel file with a column for species name ')
-    parser.add_argument('-o','--output', help='Name for the output file')
+    parser.add_argument('-o','--output', help='Name for the output file. Default=gbif_link_constructor_out.xlsx', default='gbif_link_constructor_out.xlsx')
+    parser.add_argument('-r','--header', help='Number of the row to select as header (0-based). Default=1',default=1)
     args = parser.parse_args()
     excel_name_input = args.excelname 
-    excel_name_output = "gbif_link_constructor_out.xlsx" if args.output == None  else (args.output + ".xlsx")
-    
+    excel_name_output = args.output
     # Read excel input
     df = read_excel(excel_name_input)
     # Select necessary columns
