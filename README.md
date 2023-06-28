@@ -1,5 +1,6 @@
 # gbifSpecieLinkContructor
-This tool is to build the species url of the GBIF web page that describes it.
+* This tool is to build the species url of the GBIF web page that describes it.
+* The program expect an excel file with two columns named named: "Nombre científico" and "ID del nombre científico". Where "Nombre científico" correspond to the column with the species and "ID del nombre científico" an empty column where the species url from the GBIF will be stored. You can find an example in the folder "Dataset_examples ->  "DwC_D&L_EGF_Mutata-Carepa_20230608.xlsx".
 
 ## Installation
 
