@@ -10,7 +10,13 @@
 
 **Second step:** Install requirements
 
-You must have installed python (it works on python `>= 3.9.16`). The recommended option is through [Conda](https://docs.conda.io/en/latest/miniconda.html)
+You must have installed Python (tested on `Python >= 3.9.16`). The recommended option is through [Conda](https://docs.conda.io/en/latest/miniconda.html).
+
+* Using Conda:
+
+`conda create -n gbif pip && conda activate gbif`
+
+* After you install Python by your method of preference run:
 
 `pip install -r requirements.txt`
 
