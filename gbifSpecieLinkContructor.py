@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from pygbif import species
 import pandas as pd
 import argparse
